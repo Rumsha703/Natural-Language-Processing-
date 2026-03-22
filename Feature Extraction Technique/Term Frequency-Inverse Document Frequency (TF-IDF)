@@ -1,0 +1,35 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+ 
+# Sample corpus
+corpus = [
+    "NLP is amazing and exciting",
+    "I love studying NLP and working on NLP projects",
+    "Machine learning includes NLP and other fields"
+]
+ 
+# Initialize TfidfVectorizer
+vectorizer = TfidfVectorizer()
+ 
+# Fit and transform the corpus to get TF-IDF matrix
+tfidf_matrix = vectorizer.fit_transform(corpus)
+ 
+# Show vocabulary (unique terms in the corpus)
+print("Vocabulary:", vectorizer.vocabulary_)
+ 
+# Display the TF-IDF matrix in array format
+print("TF-IDF Matrix:\n", tfidf_matrix.toarray())
+
+
+
+#Results 
+Vocabulary: {'nlp': 9, 'is': 5, 'amazing': 0, 'and': 1, 'exciting': 2, 'love': 7, 'studying': 13, 'working': 14, 'on': 10, 'projects': 12, 'machine': 8, 'learning': 6, 'includes': 4, 'other': 11, 'fields': 3}
+TF-IDF Matrix:
+ [[0.52004008 0.30714405 0.52004008 0.         0.         0.52004008
+  0.         0.         0.         0.30714405 0.         0.
+  0.         0.         0.        ]
+ [0.         0.22742704 0.         0.         0.         0.
+  0.         0.38506745 0.         0.45485408 0.38506745 0.
+  0.38506745 0.38506745 0.38506745]
+ [0.         0.24743277 0.         0.4189401  0.4189401  0.
+  0.4189401  0.         0.4189401  0.24743277 0.         0.4189401
+  0.         0.         0.        ]]
